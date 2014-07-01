@@ -9,7 +9,7 @@
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="Manacher 算法, 是用来求关于字符串回文子串问题的算法. 例, 输入: &ldquo;jg12344321aa&rdquo;, 求最长回文子串为&#8221;12344321&#8221;, 长度为8. 回文子串的常规方式是枚举串中字符, 求以当前字符为中心点( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +66,52 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/01/manachersuan-fa/">Manacher算法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-01T20:18:44+08:00" pubdate data-updated="true">Jul 1<sup>st</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Manacher 算法, 是用来求关于字符串回文子串问题的算法. 例, 输入: &ldquo;jg12344321aa&rdquo;, 求最长回文子串为&#8221;12344321&#8221;, 长度为8.</p>
+
+<p>回文子串的常规方式是枚举串中字符, 求以当前字符为中心点(或当前字符与下一个字符为中心点, 因为奇偶的关系)所得到的回文子串的长度. 此法时间复杂度为 O(n<sup>2</sup>).</p>
+
+<p>Manacher 算法思路同样是求出各个字符为中心的最长回文串长度.</p>
+
+<p><strong>预先处理</strong>: 源字符串每个字符前后都夹上一个相同的字符, 比如 &ldquo;abba&rdquo; &ndash;> &ldquo;#a#b#b#a#&rdquo;. 这样避免了奇偶处理不同的问题. 以最中间的#算起的回文串长度为5(包括自身从1算起), 故原串最长子回文串长度为5 &ndash; 1 = 4.</p>
+
+<p><strong>算法思路</strong>: 引入两个变量记录max_pos, index前面各子回文串所达到的最远位置, 和这个最远位置所在子回文串对应的中心点. 首先明确当前要处理的这个位置, 一定是在index右侧(大于index),那么两种情况1. 当前位置&lt;max_pos 2.当前位置>=max_pos. 第1种情况时, 存在这样的方程, 当前位置为中心的回文串长度 >= min(以 当前位置关于index的对称点 为中心的回文串长度, max_pos &ndash; 当前位置). 文字描述乏力, 画出图像分析一下即可证明这个方程. 第二种情况不存在什么关系, 正常算即可.</p>
+
+<p>此算法时间复杂度为O(n).</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -77,6 +123,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/01/manachersuan-fa/">Manacher算法</a>
+      </li>
     
   </ul>
 </section>

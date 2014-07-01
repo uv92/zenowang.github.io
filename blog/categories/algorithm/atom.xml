@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://zenowang.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Algorithm | My Octopress Blog]]></title>
+  <link href="http://zenowang.github.io/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://zenowang.github.io/"/>
   <updated>2014-07-01T20:19:17+08:00</updated>
   <id>http://zenowang.github.io/</id>
@@ -18,7 +18,7 @@
     <link href="http://zenowang.github.io/blog/2014/07/01/manachersuan-fa/"/>
     <updated>2014-07-01T20:18:44+08:00</updated>
     <id>http://zenowang.github.io/blog/2014/07/01/manachersuan-fa</id>
-    <content type="html"><![CDATA[<p>Manacher 算法, 是用来求关于字符串回文子串问题的算法. 例, 输入: &ldquo;jg12344321aa&rdquo;, 求最长回文子串为&#8221;12344321&#8221;, 长度为8.</p>
+    <content type="html"><![CDATA[<p>Manacher 算法, 是用来求关于字符串回文子串问题的算法. 例, 输入: &ldquo;jg12344321aa&rdquo;, 求最长回文子串为"12344321", 长度为8.</p>
 
 <p>回文子串的常规方式是枚举串中字符, 求以当前字符为中心点(或当前字符与下一个字符为中心点, 因为奇偶的关系)所得到的回文子串的长度. 此法时间复杂度为 O(n<sup>2</sup>).</p>
 

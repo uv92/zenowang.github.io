@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - My Octopress Blog</title>
+  <title>Manacher算法 - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content=" Blog Archive 2014 Manacher算法
-Jul 01 2014 posted in algorithm Recent Posts Manacher算法 ">
+  <meta name="description" content="Manacher 算法, 是用来求关于字符串回文子串问题的算法. 例, 输入: &ldquo;jg12344321aa&rdquo;, 求最长回文子串为&#8221;12344321&#8221;, 长度为8. 回文子串的常规方式是枚举串中字符, 求以当前字符为中心点( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Jul 01 2014 posted in algorithm Recent Posts Manacher算法 ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zenowang.github.io/blog/archives">
+  <link rel="canonical" href="http://zenowang.github.io/blog/2014/07/01/manachersuan-fa">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
@@ -65,35 +64,92 @@ Jul 01 2014 posted in algorithm Recent Posts Manacher算法 ">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Manacher算法</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-01T20:18:44+08:00" pubdate data-updated="true">Jul 1<sup>st</sup>, 2014</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>Manacher 算法, 是用来求关于字符串回文子串问题的算法. 例, 输入: &ldquo;jg12344321aa&rdquo;, 求最长回文子串为&#8221;12344321&#8221;, 长度为8.</p>
 
-  
-  <h2>2014</h2>
+<p>回文子串的常规方式是枚举串中字符, 求以当前字符为中心点(或当前字符与下一个字符为中心点, 因为奇偶的关系)所得到的回文子串的长度. 此法时间复杂度为 O(n<sup>2</sup>).</p>
 
-<article>
-  
-<h1><a href="/blog/2014/07/01/manachersuan-fa/">Manacher算法</a></h1>
-<time datetime="2014-07-01T20:18:44+08:00" pubdate><span class='month'>Jul</span> <span class='day'>01</span> <span class='year'>2014</span></time>
+<p>Manacher 算法思路同样是求出各个字符为中心的最长回文串长度.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/algorithm/'>algorithm</a></span>
-</footer>
+<p><strong>预先处理</strong>: 源字符串每个字符前后都夹上一个相同的字符, 比如 &ldquo;abba&rdquo; &ndash;> &ldquo;#a#b#b#a#&rdquo;. 这样避免了奇偶处理不同的问题. 以最中间的#算起的回文串长度为5(包括自身从1算起), 故原串最长子回文串长度为5 &ndash; 1 = 4.</p>
 
+<p><strong>算法思路</strong>: 引入两个变量记录max_pos, index前面各子回文串所达到的最远位置, 和这个最远位置所在子回文串对应的中心点. 首先明确当前要处理的这个位置, 一定是在index右侧(大于index),那么两种情况1. 当前位置&lt;max_pos 2.当前位置>=max_pos. 第1种情况时, 存在这样的方程, 当前位置为中心的回文串长度 >= min(以 当前位置关于index的对称点 为中心的回文串长度, max_pos &ndash; 当前位置). 文字描述乏力, 画出图像分析一下即可证明这个方程. 第二种情况不存在什么关系, 正常算即可.</p>
 
-</article>
-
+<p>此算法时间复杂度为O(n).</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-01T20:18:44+08:00" pubdate data-updated="true">Jul 1<sup>st</sup>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/algorithm/'>algorithm</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://zenowang.github.io/blog/2014/07/01/manachersuan-fa/" data-via="" data-counturl="http://zenowang.github.io/blog/2014/07/01/manachersuan-fa/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>
