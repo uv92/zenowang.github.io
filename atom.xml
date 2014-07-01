@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://zenowang.github.io/atom.xml" rel="self"/>
   <link href="http://zenowang.github.io/"/>
-  <updated>2014-07-01T16:01:44+08:00</updated>
+  <updated>2014-07-01T20:16:26+08:00</updated>
   <id>http://zenowang.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,14 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Manacher-algo]]></title>
-    <link href="http://zenowang.github.io/blog/2014/07/01/manacher-algo/"/>
-    <updated>2014-07-01T15:53:21+08:00</updated>
-    <id>http://zenowang.github.io/blog/2014/07/01/manacher-algo</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
   
 </feed>
